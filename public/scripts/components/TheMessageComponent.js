@@ -1,5 +1,5 @@
 export default {
-    props: ['msg','socketid'],
+    props: ['msg','socketid','timestamp'],
 
     template:
     `
@@ -7,6 +7,7 @@ export default {
         <h1>This is a message</h1>
         <h4>{{msg.message.name}} says:</h4>
         <p>{{msg.message.content}}</p>
+        <p>{{ timestamp }}</p>
     </article>
     `,
 

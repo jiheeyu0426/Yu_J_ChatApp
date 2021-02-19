@@ -6,28 +6,93 @@
 }
 
 body {
-    color: black;
+    
     text-align: center;
-    font-family: $default-family;
+    font-family: $main-font;
     font-size: 16px;
+    
+}
+
+.index-container {
+    color: white;
+    height: 100vh;
+    background-color: #020010;
+    overflow: hidden;
+    // background: rgb(2,0,16);
+    // background: -moz-linear-gradient(90deg, rgba(2,0,16,1) 0%, rgba(9,34,101,1) 100%);
+    // background: -webkit-linear-gradient(90deg, rgba(2,0,16,1) 0%, rgba(9,34,101,1) 100%);
+    // background: linear-gradient(90deg, rgba(2,0,16,1) 0%, rgba(9,34,101,1) 100%);
+    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020010",endColorstr="#092265",GradientType=1);
+}
+
+
+.title-box {
+    width: 100%;
+    padding-top: 100px;
+
+    h1 {
+        font-family: 'Fjalla One', arial, sans-serif;
+        font-size: 3rem;
+        letter-spacing: 4px;
+    }
+    
+    h4 {
+        font-family: $default-family;
+        font-weight: 300;
+    }
+}
+
+.form-container {
+    height: 500px;
+    // background-color: indigo;
+    background: url(../images/mafia-p.svg) no-repeat center;
+    position: relative;
 }
 
 .form {
-    background-color: indigo;
+    // background-color: indigo;
     width: 300px;
-    padding: 40px;
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
 }
 
+.form-field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #6c6c8f;
+    font-size: 1.3rem;
+    color: white;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+
+    &::placeholder {
+        letter-spacing: 0px;
+        color: #6c6c8f;
+        font-size: 16px;
+        font-family: $default-family;
+    }
+
+}
+
+.join {
+    border: none;
+    padding: 2px;
+    color: #6c6c8f;
+    font-size: 24px;
+    font-family: $main-font;
+    margin-top: 20px;
+}
+
 a {
     display: block; 
-    color: black;
+    color:white;
     // text-decoration: none; 
-    margin: 1rem 0;
+    margin-top: 5rem;
 }
 
 .new-message {
