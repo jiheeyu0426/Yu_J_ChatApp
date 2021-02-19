@@ -6,24 +6,27 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <title>My Chat Page</title>
+    <title>Jiheui's Chat App</title>
 </head>
 <body>
-    <main id="app">
-        <h2>This is where my awesome chat message will show up</h2>
+    <main id="app" class="chat-container">
+        <h1 class="hidden">A chat room</h1>
 
         <!-- vue custom message component goes here -->
    
             <section class="messages">
-                <small v-if="typing">{{typing}} is typing</small>
+                
                 <ul id="messages" v-for="message in messages">
                     <newmessage :msg="message" :socketid="socketID" :timestamp="timestamp"></newmessage>
                 </ul>
             </section>
-
+            <span class="type" v-if="typing">{{typing}} is typing</span>
             <section class="message-wrapper">
-                <textarea v-model="newMessage" class="text-message" placeholder="Enter maasge here"></textarea>
-                <input @click.prevent="dispatchMessage" type="submit" value="send">
+
+                <input class="send" @click.prevent="dispatchMessage" type="submit" value="send">
+                
+                <textarea v-model="newMessage" class="text-message" placeholder="Discovered their plots..."></textarea>
+                
             </section>
      
 

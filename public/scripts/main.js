@@ -32,7 +32,7 @@ import ChatMessage from "./components/TheMessageComponent.js"
         },
 
         created() {
-            debugger;
+            // debugger;
             console.log('its alive!!');
 
             socket.on('typing', (data) => {
@@ -56,7 +56,7 @@ import ChatMessage from "./components/TheMessageComponent.js"
 
         methods: {
             dispatchMessage() {
-                debugger;
+                // debugger;
                 socket.emit('chatmessage', {content: this.newMessage, name: this.username || "Anonymous"});
 
                 this.newMessage = null;
@@ -68,8 +68,10 @@ import ChatMessage from "./components/TheMessageComponent.js"
                 const time = currentTime.getHours() + ":" + currentTime.getMinutes();
                 const dateTime = time;
                 this.timestamp = dateTime;
-            }
+            },
+
         },
+        
 
         components: {
             newmessage: ChatMessage
