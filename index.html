@@ -5,25 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <title>Jihee's Chat App</title>
 </head>
 <body>
-    <main id="app">
-        <h1 class="hidden">Super Chat</h1>
-        <h4>Add a username to join the chat </h4>
-        <h6>or not, to stealth post</h6>
-
+    <main id="app" class="index-container">
+        <div class="title-box">
+            <h1 class="hidden">SECRET CHAT</h1>
+            <h4>You finally found this secret chat</h4>
+            <h4>It's time to talk to the people.</h4>
+        </div>
+        <div class="form-container">
             <form class="form" action="/chat" method="post" >
                 <h2>login</h2>
-                <input type="text" v-model:value="username" placeholder="username">
-                <input type="password" placeholder="password">
+                
+                <input class="form-field" type="text"  placeholder="username">
+                
+                <input class="form-field" type="password" placeholder="password">
 
-                <input type="submit" value="JOIN">
+                <input class="join" type="submit" value="Join">
+                <a href="/chat">To the secret place secretly</a>
             </form>
+        </div>
     
 
         <!-- temp back to bypass login-->
-        <a href="/chat">to chat page</a>
+        
     </main>
     
 </body>

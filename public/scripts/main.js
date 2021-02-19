@@ -22,6 +22,7 @@ import ChatMessage from "./components/TheMessageComponent.js"
     const vm = new Vue({
         data: {
             newMessage:null,
+            timestamp: "",
             messages: [],
             nickname: "",
             username: "me",
@@ -42,6 +43,7 @@ import ChatMessage from "./components/TheMessageComponent.js"
                 this.typing = false
             });
 
+            setInterval(this.getNow, 1000);
         },
 
         watch:{
@@ -55,9 +57,17 @@ import ChatMessage from "./components/TheMessageComponent.js"
         methods: {
             dispatchMessage() {
                 debugger;
-                socket.emit('chatmessage', {content: this.newMessage, name: this.nickname || "Anonymous"});
+                socket.emit('chatmessage', {content: this.newMessage, name: this.username || "Anonymous"});
 
                 this.newMessage = null;
+            },
+
+            getNow: function() {
+                const currentTime= new Date();
+                const date = currentTime.getFullYear()+'-'+(currentTime.getMonth()+1)+'-'+currentTime.getDate();
+                const time = currentTime.getHours() + ":" + currentTime.getMinutes();
+                const dateTime = time;
+                this.timestamp = dateTime;
             }
         },
 
