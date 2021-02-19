@@ -21,23 +21,43 @@ import ChatMessage from "./components/TheMessageComponent.js"
 
     const vm = new Vue({
         data: {
+            newMessage:null,
             messages: [],
             nickname: "",
-            username: "",
+            username: "me",
             socketID: "",
+            typing: false,
             message: ""
         },
 
-        created: function() {
+        created() {
+            debugger;
             console.log('its alive!!');
+
+            socket.on('typing', (data) => {
+                this.typing = data
+            });
+
+            socket.on('stopTyping', () => {
+                this.typing = false
+            });
+
         },
+
+        watch:{
+            newMessage(value) {
+                // debugger;
+                value ? socket.emit('typing',this.username):socket.emit('stopTyping')
+            }
+        },
+        
 
         methods: {
             dispatchMessage() {
-                // debugger;
-                socket.emit('chatmessage', {content: this.message, name: this.nickname || "Anonymous"});
+                debugger;
+                socket.emit('chatmessage', {content: this.newMessage, name: this.nickname || "Anonymous"});
 
-                this.message = "";
+                this.newMessage = null;
             }
         },
 

@@ -6,16 +6,26 @@
 }
 
 body {
-    background-color: $main-bg-color;
-    color: $main-text-color;
-
+    color: black;
+    text-align: center;
     font-family: $default-family;
-    font-size: 16px;;
+    font-size: 16px;
+}
+
+.form {
+    background-color: indigo;
+    width: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
 }
 
 a {
     display: block; 
-    color: white; 
+    color: black;
     // text-decoration: none; 
     margin: 1rem 0;
 }
@@ -32,4 +42,8 @@ a {
 .my-message {
     background-color: darkgreen;
     float:right;
+}
+
+textarea {
+    border: 1px solid indigo;
 }
