@@ -38,12 +38,16 @@ messenger.on('connection', (socket) => {
 		messenger.emit('message', { id: socket.id, message: msg });
 	});
 
+	// socket.on('typing', function(data){
+	// // 	socket.broadcast.emit('typing', data);
+	// //  });
+
 	socket.on('typing', (data) => {
 		socket.broadcast.emit('typing', (data))
 	});
 
 	socket.on('stopTyping', () => {
-		socket.broadcast.emit('stopTyping', (data))
+		socket.broadcast.emit('stopTyping')
 	});
 	
 	socket.on('disconnect', () => {
