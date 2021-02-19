@@ -25,9 +25,10 @@ import ChatMessage from "./components/TheMessageComponent.js"
             nickname: "",
             username: "",
             socketID: "",
+            typing: false,
             message: ""
         },
-
+        
         created: function() {
             console.log('its alive!!');
         },
