@@ -10,10 +10,10 @@
 </head>
 <body>
     <main id="app" class="chat-container">
-        <h1 class="hidden">A chat room</h1>
+        <div class="col-container">
+            <h1 class="hidden">A chat room</h1>
 
-        <!-- vue custom message component goes here -->
-   
+            <!-- vue custom message component goes here -->
             <section class="messages">
                 
                 <ul id="messages" v-for="message in messages">
@@ -24,12 +24,13 @@
             <section class="message-wrapper">
 
                 <input class="send" @click.prevent="dispatchMessage" type="submit" value="send">
+
                 
                 <textarea v-model="newMessage" class="text-message" placeholder="Discovered their plots..."></textarea>
                 
             </section>
      
-
+        </div>
     </main> 
 
     <script src="/socket.io/socket.io.js"></script>
