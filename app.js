@@ -47,6 +47,12 @@ messenger.on('connection', (socket) => {
 	socket.on('stopTyping', () => {
 		socket.broadcast.emit('stopTyping')
 	});
+
+	// socket.on('joined', (data) => {
+    //     socket.broadcast.emit('joined', (data));
+    // });
+
+
 	
 	socket.on('disconnect', () => {
 		console.log('a user has disconnected');
