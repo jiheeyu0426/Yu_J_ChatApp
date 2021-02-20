@@ -1,4 +1,4 @@
-![title](images/banner.png "jihee's chat app")
+![title](public/images/banner.png "jihee's chat app")
 
 ># Jiheui Yu's Chat App
 
