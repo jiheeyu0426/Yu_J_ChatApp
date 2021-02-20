@@ -25,7 +25,7 @@ import ChatMessage from "./components/TheMessageComponent.js"
             timestamp: "",
             messages: [],
             nickname: "",
-            username: "me",
+            username: "Stranger",
             socketID: "",
             typing: false,
             message: ""
@@ -44,6 +44,19 @@ import ChatMessage from "./components/TheMessageComponent.js"
             });
 
             setInterval(this.getNow, 1000);
+
+            // debugger;
+            // socket.on('joined', (data) => {
+            //     this.socketID.push({
+            //         username: data,
+            //         type: 'joined'
+            //     });
+
+            //     setTimeout(() => {
+            //         this.messages = [];
+            //     }, 5000);
+            // });
+
         },
 
         watch:{
@@ -56,10 +69,12 @@ import ChatMessage from "./components/TheMessageComponent.js"
 
         methods: {
             dispatchMessage() {
-                // debugger;
                 socket.emit('chatmessage', {content: this.newMessage, name: this.username || "Anonymous"});
 
                 this.newMessage = null;
+
+                // debugger;
+                socket.emit('joined', this.username)
             },
 
             getNow: function() {
@@ -69,14 +84,13 @@ import ChatMessage from "./components/TheMessageComponent.js"
                 const dateTime = time;
                 this.timestamp = dateTime;
             },
-
-        },
         
+        },
 
         components: {
             newmessage: ChatMessage
-        }
-         
+            }
+    
     }).$mount("#app");
     
     socket.addEventListener('connected', setUserId);

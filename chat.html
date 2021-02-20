@@ -15,7 +15,8 @@
 
             <!-- vue custom message component goes here -->
             <section class="messages">
-                
+                <h2 class="chat-title">Strangers Room</h2>
+                </ul>
                 <ul id="messages" v-for="message in messages">
                     <newmessage :msg="message" :socketid="socketID" :timestamp="timestamp"></newmessage>
                 </ul>
